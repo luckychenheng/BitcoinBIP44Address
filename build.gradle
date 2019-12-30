@@ -1,0 +1,32 @@
+group 'com.lucky'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'io.github.novacrypto:BIP39:2019.01.27'
+    compile 'io.github.novacrypto:BIP32:2019.01.27'
+    compile 'io.github.novacrypto:BIP44:2019.01.27'
+}
+task"create-dirs" << {
+
+    sourceSets*.java.srcDirs*.each {
+
+        it.mkdirs()
+
+    }
+
+    sourceSets*.resources.srcDirs*.each{
+
+        it.mkdirs()
+
+    }
+}
