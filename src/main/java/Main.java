@@ -17,8 +17,7 @@ import static io.github.novacrypto.bip44.BIP44.m;
 public final class Main {
 
     public static void main(String[] args) {
-//        final String mnemonic = generateNewMnemonic(Words.TWELVE);
-        String mnemonic = "blue room error allow wreck unaware venture best remain situate drum edit";
+        final String mnemonic = generateNewMnemonic(Words.TWELVE);
         final byte[] seed = new SeedCalculator().calculateSeed(mnemonic, "");
 
         System.out.println("mnemonic = " + mnemonic + " || seed = " + seed.length);
